@@ -3,7 +3,7 @@ Docker build for running koboldcpp-rocm
 
 # Building the image
 
-- clone the ROCm fork of koboldcpp
+- clone the ROCm fork of koboldcpp, inside the local directory of this repo
 
 ```bash
 
