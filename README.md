@@ -27,6 +27,12 @@ docker run --rm -it -p 5001:5001 --device /dev/kfd --device /dev/dri \
 kobold:latest
 ```
 
+- run koboldcpp server (inside the container)
+
+```bash
+./koboldcpp.py --config example_config.json
+```
+
 # Additional info
 
 This was tested on 7900xtx
