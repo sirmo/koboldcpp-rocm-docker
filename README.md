@@ -36,3 +36,18 @@ kobold:latest
 # Additional info
 
 This was tested on 7900xtx
+
+For other architectures modify the `ENV HSA_OVERRIDE_GFX_VERSION=11.0.0` line in `Dockerfile` to the appropriate value.
+
+Some examples:
+
+```bash
+    gfx900: Vega 64
+    gfx906: Radeon VII
+    gfx908: Instinct MI100
+    gfx90a: Instinct MI200/ MI250
+    gfx1030: RX 6800/ 6900/ 6950, also works on many other RDNA2 and RDNA1 cards with the environment variable "HSA_OVERRIDE_GFX_VERSION=10.3.0"
+    gfx1100: RX 7900
+    gfx1101: Unreleased, probably RX 7700/ 7800?
+    gfx1102: RX 7600
+```
