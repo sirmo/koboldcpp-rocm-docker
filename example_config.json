@@ -1,6 +1,6 @@
 {
     "model": null,
-    "model_param": "/home/user/models/mistral-7b-instruct-v0.2.Q5_K_M.gguf",
+    "model_param": "/models/mistral-7b-instruct-v0.2.Q5_K_M.gguf",
     "port": 5001,
     "port_param": 5001,
     "host": "",
