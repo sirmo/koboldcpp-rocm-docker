@@ -18,7 +18,7 @@ docker build -t kobold:latest .
 
 ```
 
-- start the container (assumes the .gguf LLM models are located in `~/models`)
+- start the container (assumes the .gguf LLM models are located in `~/models`, change accordingly)
 
 ```bash
 
