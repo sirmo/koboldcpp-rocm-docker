@@ -23,13 +23,15 @@ FROM stage2 as stage3
 ENV HSA_OVERRIDE_GFX_VERSION=11.0.0
 # workaround for high idle power on the 7900xtx
 ENV GPU_MAX_HW_QUEUES=1
-# RUN "./koboldcpp.sh"
+# following command requires $DISPLAY to be set
+# we just ignore this error for now
+RUN "./koboldcpp.sh; exit 0"
 
-# FROM stage3 as stage4
-# # RDNA3 TODO write a script that automatically configures this
-# ENV HSA_OVERRIDE_GFX_VERSION=11.0.0
-# # workaround for high idle power on the 7900xtx
-# ENV GPU_MAX_HW_QUEUES=1
-# RUN make clean
-# RUN make LLAMA_HIPBLAS=1 -j $(nproc)
-# RUN chmod 755 koboldcpp.py
+FROM stage3 as stage4
+# RDNA3 TODO write a script that automatically configures this
+ENV HSA_OVERRIDE_GFX_VERSION=11.0.0
+# workaround for high idle power on the 7900xtx
+ENV GPU_MAX_HW_QUEUES=1
+RUN make clean
+RUN make LLAMA_HIPBLAS=1 -j $(nproc)
+RUN chmod 755 koboldcpp.py
